@@ -1,0 +1,18 @@
+{
+  "development": {
+    "username": "annaj",
+    "password": null,
+    "database": "ratings-viewer-dev",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "waiyaki",
+    "password": null,
+    "database": "ratings-viewer-test",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "dialect": "postgres"
+  }
+}
