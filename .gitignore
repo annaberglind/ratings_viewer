@@ -11,3 +11,5 @@ node_modules/
 
 *.csv
 *.tsv
+
+server/config/config.json

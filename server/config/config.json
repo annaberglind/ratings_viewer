@@ -1,6 +1,6 @@
 {
   "development": {
-    "username": "annaj",
+    "username": "postgres",
     "password": null,
     "database": "ratings-viewer-dev",
     "host": "127.0.0.1",

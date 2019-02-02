@@ -28,7 +28,12 @@ def create_series_file():
 
             attributes = get_line_attributes(line)
 
-            row = [attributes[0], '"' + str(attributes[2]) + '"', attributes[5], attributes[6]]
+            row = [
+                attributes[0], 
+                '"' + str(attributes[2]).replace('"', '""') + '"', 
+                attributes[5], 
+                attributes[6]
+            ]
 
             out_file.write(','.join(row) + '\n')
 
