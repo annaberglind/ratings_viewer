@@ -4,7 +4,6 @@ var path = require('path');
 module.exports = {
   up: (queryInterface) => {
     return csv()
-      // .fromFile('/Users/annaj/Developer/ratings_viewer/files/series.csv')
       .fromFile(path.resolve(__dirname, '../../files/series.csv'))
       .then( seriesInJson => {
         seriesInJson = seriesInJson.map(serie => {
@@ -22,7 +21,7 @@ module.exports = {
           serie['createdAt'] = new Date();
           
           return serie;
-        }).filter(serie => !serie['field5']);
+        });
 
         return queryInterface.bulkInsert('Series', seriesInJson, {});
       });
