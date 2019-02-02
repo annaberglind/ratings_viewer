@@ -28,9 +28,9 @@ def create_series_file():
 
             attributes = get_line_attributes(line)
 
-            row = [attributes[0], attributes[2], attributes[5], attributes[6]]
+            row = [attributes[0], "'" + str(attributes[2]) + "'", attributes[5], attributes[6]]
 
-            out_file.write(', '.join(row) + '\n')
+            out_file.write(','.join(row) + '\n')
 
 def create_episodes_file():
     with open('title.basics.tsv') as basics, open('title.episode.tsv') as episodes, open('title.ratings.tsv') as ratings:
