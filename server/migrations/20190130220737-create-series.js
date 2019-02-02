@@ -13,10 +13,11 @@ module.exports = {
       },
       startYear: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: true
       },
       endYear: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: true
       },
       createdAt: {
         allowNull: false,
