@@ -20,7 +20,7 @@ def get_line(file, is_first=False):
 
 def create_series_file():
     with open('title.basics.tsv') as in_file, open('series.csv', 'w') as out_file:
-        out_file.write('id, title, start_year, end_year\n')
+        out_file.write('id,title,start_year,end_year\n')
 
         for line in in_file:
             if 'tvSeries' not in line:
@@ -28,14 +28,14 @@ def create_series_file():
 
             attributes = get_line_attributes(line)
 
-            row = [attributes[0], "'" + str(attributes[2]) + "'", attributes[5], attributes[6]]
+            row = [attributes[0], '"' + str(attributes[2]) + '"', attributes[5], attributes[6]]
 
             out_file.write(','.join(row) + '\n')
 
 def create_episodes_file():
     with open('title.basics.tsv') as basics, open('title.episode.tsv') as episodes, open('title.ratings.tsv') as ratings:
         with open('episodes.csv', 'w') as out_file:
-            out_file.write('id, series_id, season_number, episode_number, rating, number_of_votes\n')
+            out_file.write('id,series_id,season_number,episode_number,rating,number_of_votes\n')
             
             basics_line = get_line(basics, is_first=True)
             episodes_line = get_line(episodes, is_first=True)
