@@ -8,12 +8,14 @@
     "start": "node ./server/index.js",
     "build": "webpack -p",
     "react-dev": "webpack -d --watch",
-    "server-dev": "nodemon server/index.js"
+    "server-dev": "nodemon server/index.js",
+    "eslint": "./node_modules/eslint/bin/eslint.js --ext=js,jsx ./"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "csvtojson": "^2.0.8",
     "express": "^4.16.4",
     "nodemon": "^1.18.9",
     "pg": "^7.8.0",
@@ -30,6 +32,12 @@
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
+    "eslint": "^5.11.1",
+    "babel-eslint": "^10.0.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-jsx-control-statements": "^2.2.0",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-react": "^7.9.1",
     "webpack-cli": "^3.2.1"
   }
 }

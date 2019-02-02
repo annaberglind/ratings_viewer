@@ -1,9 +1,9 @@
-const path = require('path');
+import path from 'path';
+import webpack from 'webpack';
 const SRC_DIR = path.join(__dirname, '/react-client/src');
-const DIST_DIR = path.join(__dirname, '/react-client/dist');
-const webpack = require('webpack');
+const DIST_DIR = path.join(__dirname, '/react-client/server');
 
-module.exports = {
+export default {
   entry: `${SRC_DIR}/index.jsx`,
   output: {
     path: DIST_DIR,

@@ -1,4 +1,4 @@
-module.exports = (sequelize, DataTypes) => {
+export default (sequelize, DataTypes) => {
   const Episodes = sequelize.define('Episodes', {
     seasonNumber: DataTypes.INTEGER,
     episodeNumber: DataTypes.INTEGER,
