@@ -25,5 +25,8 @@ module.exports = {
 
                 return queryInterface.bulkInsert('Series', seriesInJson, {});
             });
+    },
+    down: (queryInterface, Sequelize) => {
+        return queryInterface.bulkDelete('Series', null, {});
     }
 };

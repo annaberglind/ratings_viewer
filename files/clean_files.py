@@ -21,7 +21,7 @@ def get_line(file, is_first=False):
 def create_basics_file():
     with open('title.basics.tsv') as in_file, open('title.basics_clean.tsv', 'w') as out_file:
         for line in in_file:
-            if not ('tvSeries' in line or 'tvEpisode' in line or 'runtimeMinutes' in line):
+            if not ('tvSeries' in line or 'tvEpisode' in line or 'runtimeMinutes' in line or 'tvMiniSeries' in line):
                 continue
 
             out_file.write(line)
@@ -31,7 +31,7 @@ def create_series_file():
         out_file.write('id,title,startYear,endYear\n')
 
         for line in in_file:
-            if 'tvSeries' not in line:
+            if not ('tvSeries' in line or 'tvMiniSeries' in line):
                 continue
 
             attributes = get_line_attributes(line)
@@ -97,7 +97,7 @@ def create_episodes_file():
                 basics_attributes = episodes_attributes = ratings_attributes = None
 
 if __name__ == '__main__':
-    # create_basics_file()
+    create_basics_file()
     create_series_file()
     create_episodes_file()
 

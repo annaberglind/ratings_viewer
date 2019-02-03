@@ -19,8 +19,11 @@ module.exports = {
                 }).filter(episode => episode['seasonNumber'] && episode['episodeNumber']);
 
                 return queryInterface.bulkInsert('Episodes', episodesInJson, {
-                    logging: console.log
+                
                 });
             });
+    },
+    down: (queryInterface, Sequelize) => {
+        return queryInterface.bulkDelete('Episodes', null, {});
     }
 };
